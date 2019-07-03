@@ -94,17 +94,17 @@
 
 
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="并发概述并发面临的挑战并发一定更快么？答案是不一定，当并发执行操作不超过百万次时，并发执行速度要比串行执行要慢 原因 ： 上下文切换 解决办法 ：   避免使用锁 ： 多线程竞争锁的时候会引起上下文切换 使用CAS算法更新数据，不加锁 避免创建不必要的线程 使用协程  活跃性问题死锁原因 ：  两个线程互相等待对方释放锁 解决办法 ：   避免一个线程同时获取多个锁 尽量保证一个锁占用一个资源 尝">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2019/07/03/hello-world/index.html">
+<meta property="og:title" content="huang_nsn的个人博客">
+<meta property="og:url" content="http://yoursite.com/2019/05/10/并发概述/index.html">
 <meta property="og:site_name" content="huang_nsn的个人博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="并发概述并发面临的挑战并发一定更快么？答案是不一定，当并发执行操作不超过百万次时，并发执行速度要比串行执行要慢 原因 ： 上下文切换 解决办法 ：   避免使用锁 ： 多线程竞争锁的时候会引起上下文切换 使用CAS算法更新数据，不加锁 避免创建不必要的线程 使用协程  活跃性问题死锁原因 ：  两个线程互相等待对方释放锁 解决办法 ：   避免一个线程同时获取多个锁 尽量保证一个锁占用一个资源 尝">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-03T13:36:50.218Z">
+<meta property="og:updated_time" content="2019-05-15T13:03:08.689Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="huang_nsn的个人博客">
+<meta name="twitter:description" content="并发概述并发面临的挑战并发一定更快么？答案是不一定，当并发执行操作不超过百万次时，并发执行速度要比串行执行要慢 原因 ： 上下文切换 解决办法 ：   避免使用锁 ： 多线程竞争锁的时候会引起上下文切换 使用CAS算法更新数据，不加锁 避免创建不必要的线程 使用协程  活跃性问题死锁原因 ：  两个线程互相等待对方释放锁 解决办法 ：   避免一个线程同时获取多个锁 尽量保证一个锁占用一个资源 尝">
 
 
 
@@ -112,7 +112,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/07/03/hello-world/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/10/并发概述/">
 
 
 
@@ -122,7 +122,7 @@
   };
 </script>
 
-  <title>Hello World | huang_nsn的个人博客</title>
+  <title> | huang_nsn的个人博客</title>
   
 
 
@@ -353,7 +353,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/03/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/10/并发概述/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="huang_nsn">
@@ -370,7 +370,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World
+          <h1 class="post-title" itemprop="name headline">
 
               
             
@@ -396,10 +396,24 @@
                 
               
 
-              <time title="Created: 2019-07-03 21:36:50" itemprop="dateCreated datePublished" datetime="2019-07-03T21:36:50+08:00">2019-07-03</time>
+              <time title="Created: 2019-05-10 22:29:57" itemprop="dateCreated datePublished" datetime="2019-05-10T22:29:57+08:00">2019-05-10</time>
             </span>
           
 
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-05-15 21:03:08" itemprop="dateModified" datetime="2019-05-15T21:03:08+08:00">2019-05-15</time>
+              </span>
+            
           
 
           
@@ -434,20 +448,45 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        <h1 id="并发概述"><a href="#并发概述" class="headerlink" title="并发概述"></a>并发概述</h1><h2 id="并发面临的挑战"><a href="#并发面临的挑战" class="headerlink" title="并发面临的挑战"></a>并发面临的挑战</h2><h4 id="并发一定更快么？"><a href="#并发一定更快么？" class="headerlink" title="并发一定更快么？"></a>并发一定更快么？</h4><p>答案是不一定，当并发执行操作不超过百万次时，并发执行速度要比串行执行要慢</p>
+<p>原因 ： 上下文切换</p>
+<p>解决办法 ： </p>
+<ul>
+<li>避免使用锁 ： 多线程竞争锁的时候会引起上下文切换</li>
+<li>使用CAS算法更新数据，不加锁</li>
+<li>避免创建不必要的线程</li>
+<li>使用协程</li>
+</ul>
+<h4 id="活跃性问题"><a href="#活跃性问题" class="headerlink" title="活跃性问题"></a>活跃性问题</h4><h5 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h5><p>原因 ：  两个线程互相等待对方释放锁</p>
+<p>解决办法 ： </p>
+<ul>
+<li>避免一个线程同时获取多个锁</li>
+<li>尽量保证一个锁占用一个资源</li>
+<li>尝试使用定时锁</li>
+<li>对于数据库锁，加锁和解锁要在一个连接中</li>
+</ul>
+<h5 id="饥饿"><a href="#饥饿" class="headerlink" title="饥饿"></a>饥饿</h5><p>原因 ： 线程得不到时间片</p>
+<h5 id="活锁"><a href="#活锁" class="headerlink" title="活锁"></a>活锁</h5><p>原因 ：两个线程同时向同一个方向避让，然后又向另一个方向避让</p>
+<h4 id="线程安全问题"><a href="#线程安全问题" class="headerlink" title="线程安全问题"></a>线程安全问题</h4><p>出现线程安全问题的条件</p>
+<ul>
+<li>多线程环境下</li>
+<li>共享一个资源</li>
+<li>对资源进行非原子性操作</li>
+</ul>
+<h2 id="解决并发问题的途径"><a href="#解决并发问题的途径" class="headerlink" title="解决并发问题的途径"></a>解决并发问题的途径</h2><h4 id="synchronized"><a href="#synchronized" class="headerlink" title="synchronized"></a>synchronized</h4><p>锁，Java中每个对象都可以作为锁</p>
+<h4 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h4><p>确保被声明的变量的值对各个线程可见，即一个线程修改变量的值，对其他线程立即可见</p>
+<h4 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h4><ul>
+<li>偏向锁</li>
+<li>轻量级锁</li>
+<li>重量级锁</li>
+<li>重入锁</li>
+<li>自旋锁</li>
+<li>共享锁、读锁</li>
+<li>独占锁、排他锁、写锁</li>
+<li>公平锁、非公平锁</li>
+<li>死锁、活锁</li>
+</ul>
+<h4 id="Java的支持"><a href="#Java的支持" class="headerlink" title="Java的支持"></a>Java的支持</h4><h5 id="Java中的并发容器和框架"><a href="#Java中的并发容器和框架" class="headerlink" title="Java中的并发容器和框架"></a>Java中的并发容器和框架</h5><h5 id="Java中的原子操作类"><a href="#Java中的原子操作类" class="headerlink" title="Java中的原子操作类"></a>Java中的原子操作类</h5><h5 id="Java中的并发工具类"><a href="#Java中的并发工具类" class="headerlink" title="Java中的并发工具类"></a>Java中的并发工具类</h5><h5 id="Executor框架"><a href="#Executor框架" class="headerlink" title="Executor框架"></a>Executor框架</h5>
       
     </div>
 
@@ -477,7 +516,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/10/Java并发机制的底层实现原理/" rel="next" title>
+              <a href="/2019/05/10/多线程/" rel="next" title>
                 <i class="fa fa-chevron-left"></i> 
               </a>
             
@@ -486,6 +525,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/10/Java并发机制的底层实现原理/" rel="prev" title>
+                 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -596,7 +639,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#并发概述"><span class="nav-number">1.</span> <span class="nav-text">并发概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#并发面临的挑战"><span class="nav-number">1.1.</span> <span class="nav-text">并发面临的挑战</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#并发一定更快么？"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">并发一定更快么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#活跃性问题"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">活跃性问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#死锁"><span class="nav-number">1.1.0.2.1.</span> <span class="nav-text">死锁</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#饥饿"><span class="nav-number">1.1.0.2.2.</span> <span class="nav-text">饥饿</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#活锁"><span class="nav-number">1.1.0.2.3.</span> <span class="nav-text">活锁</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线程安全问题"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">线程安全问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决并发问题的途径"><span class="nav-number">1.2.</span> <span class="nav-text">解决并发问题的途径</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#synchronized"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">synchronized</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#volatile"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">volatile</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#锁"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java的支持"><span class="nav-number">1.2.0.4.</span> <span class="nav-text">Java的支持</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Java中的并发容器和框架"><span class="nav-number">1.2.0.4.1.</span> <span class="nav-text">Java中的并发容器和框架</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Java中的原子操作类"><span class="nav-number">1.2.0.4.2.</span> <span class="nav-text">Java中的原子操作类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Java中的并发工具类"><span class="nav-number">1.2.0.4.3.</span> <span class="nav-text">Java中的并发工具类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Executor框架"><span class="nav-number">1.2.0.4.4.</span> <span class="nav-text">Executor框架</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
